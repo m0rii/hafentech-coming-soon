@@ -4,37 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Impressum – HafenTech</title>
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#0b1220">
   <style>
-    body{margin:0; background:#0b1220; color:#e8eefc; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; display:grid; place-items:center; min-height:100svh; padding:2rem}
-    main{max-width:820px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:2rem}
-    h1{margin-top:0}
-    a{color:#e8eefc}
-    .fine{opacity:.85}
+    :root{
+      --bg:#0b1220; --txt:#e8eefc; --muted:#a8b3cf; --border:rgba(255,255,255,.12);
+      --radius:22px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:860px; --pad:clamp(18px,3.2vw,28px);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--txt);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+      display:grid; min-height:100svh; place-items:center;
+      padding:clamp(16px,4vw,40px);
+    }
+    main{
+      width:100%; max-width:var(--max);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+      border:1px solid var(--border); border-radius:var(--radius);
+      padding:var(--pad); box-shadow:var(--shadow);
+    }
+    h1,h2{margin-top:0}
+    p,li{color:var(--muted); line-height:1.65}
+    a{color:var(--txt); text-underline-offset:2px}
+    .back{margin-top:1rem}
+    .grid{
+      display:grid; gap:.6rem;
+    }
+    @media (min-width:600px){
+      .grid{grid-template-columns:1fr 1fr; gap:1rem}
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>Impressum</h1>
     <p class="fine">Angaben gemäß § 5 TMG</p>
-    <p>
-      <strong>HafenTech – Digitale Lösungen für kleine Unternehmen</strong><br/>
-      Inhaber: Morteza Nabhan<br/>
-      Sprützmoor 80<br/>
-      22547 Hamburg
-    </p>
-    <p>
-      Kontakt: <a href="mailto:info@hafentech.de">info@hafentech.de</a>
-    </p>
-    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-    <p>Morteza Nabhan, Sprützmoor 80, 22547 Hamburg</p>
+
+    <section class="grid" aria-labelledby="firmenangaben">
+      <div>
+        <h2 id="firmenangaben">Firma</h2>
+        <p>
+          <strong>HafenTech – Digitale Lösungen für kleine Unternehmen</strong><br>
+          Inhaber: Morteza Nabhan
+        </p>
+      </div>
+      <div>
+        <h2>Adresse</h2>
+        <p>Sprützmoor 80<br>22547 Hamburg</p>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <p>E-Mail: <a href="mailto:info@hafentech.de">info@hafentech.de</a></p>
+      </div>
+      <div>
+        <h2>Verantwortlich i.S.d. § 55 Abs. 2 RStV</h2>
+        <p>Morteza Nabhan, Sprützmoor 80, 22547 Hamburg</p>
+      </div>
+    </section>
+
     <h2>Haftung für Inhalte</h2>
-    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+    <p>Wir sind gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
     <h2>Haftung für Links</h2>
-    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Daher können wir für diese fremden Inhalte auch keine Gewähr übernehmen.</p>
+    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+
     <h2>Urheberrecht</h2>
-    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
-    <p><a href="index.html">Zur Startseite</a></p>
+    <p>Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
+
+    <p class="back"><a href="index.html">← Zur Startseite</a></p>
   </main>
 </body>
 </html>
